@@ -1,6 +1,6 @@
 {
   "name": "aneesh-vsftpd",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "author": "aneesh",
   "summary": "Puppet module for vsftpd",
   "license": "Apache-2.0",
@@ -32,6 +32,12 @@
         "12.04",
         "14.04",
         "16.04"
+      ]
+    },
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "7"
       ]
     }
   ],
