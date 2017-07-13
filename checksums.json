@@ -3,6 +3,6 @@
   "README.md": "a7d7d6d385556884a77811f1c9c59064",
   "manifests/init.pp": "64d315c55b9fee4d9036fa0709bbb1e7",
   "manifests/params.pp": "f0d980431d66ebbe76ec2c92d7026961",
-  "metadata.json": "7d3b21a494db2e2ce7283e7d446df604",
+  "metadata.json": "898adf71dc936838dcf4b563729f4c07",
   "templates/configfile.erb": "fef2187e9f3486c96fea1f28edc2f8e4"
 }
