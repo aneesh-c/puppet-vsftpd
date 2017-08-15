@@ -60,7 +60,7 @@ class vsftpd (
   }
   if $::osfamily == 'RedHat' {
     service { 'vsftpd':
-      require => package[$package_name],
+      require => Package[$package_name],
       enable  => true,
     }
   }
