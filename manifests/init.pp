@@ -51,7 +51,6 @@ class vsftpd (
   $ssl_sslv3              = undef,
   $require_ssl_reuse      = undef,
   $ssl_ciphers            = undef,
-                                  # doplnene promene
   $async_abor_enable      = undef,
   $data_connection_timeout= undef,
   $debug_ssl              = undef,
