@@ -51,6 +51,15 @@ class vsftpd (
   $ssl_sslv3              = undef,
   $require_ssl_reuse      = undef,
   $ssl_ciphers            = undef,
+                                  # doplnene promene
+  $async_abor_enable      = undef,
+  $data_connection_timeout= undef,
+  $debug_ssl              = undef,
+  $force_dot_files        = undef,
+  $idle_session_timeout   = undef,
+  $passwd_chroot_enable   = undef,
+  $session_support        = undef,
+  $xferlog_file           = undef,
 ) inherits ::vsftpd::params {
   package { $package_name: ensure => installed }
   file { $configfile:
