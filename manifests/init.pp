@@ -59,6 +59,7 @@ class vsftpd (
   $passwd_chroot_enable   = undef,
   $session_support        = undef,
   $xferlog_file           = undef,
+  $manage_service         = true,
 ) inherits ::vsftpd::params {
   package { $package_name: ensure => installed }
   file { $configfile:
@@ -66,10 +67,12 @@ class vsftpd (
     backup  => '.backup',
     content => template($template),
   }
-  if $::osfamily == 'RedHat' {
-    service { 'vsftpd':
-      require => Package[$package_name],
-      enable  => true,
+  if $manage_service {
+    if $::osfamily == 'RedHat' {
+      service { 'vsftpd':
+        require => Package[$package_name],
+        enable  => true,
+      }
     }
   }
 }
