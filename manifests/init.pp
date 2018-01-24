@@ -28,6 +28,8 @@ class vsftpd (
   $connect_from_port_20   = undef,
   $xferlog_std_format     = undef,
   $chroot_local_user      = undef,
+  $chroot_list_file       = undef,
+  $chroot_list_enable     = undef,
   $listen                 = undef,
   $listen_ipv6            = undef,
   $pam_service_name       = undef,

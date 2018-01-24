@@ -116,9 +116,12 @@ xferlog_std_format=<%= @xferlog_std_format %>
 <% if @chroot_local_user -%>
 chroot_local_user=<%= @chroot_local_user %>
 <% end -%>
-#chroot_list_enable=YES
-# (default follows)
-#chroot_list_file=/etc/vsftpd/chroot_list
+<% if @chroot_list_enable -%>
+chroot_list_enable=<%= @chroot_list_enable %>
+<% end -%>
+<% if @chroot_list_file -%>
+chroot_list_file=<%= @chroot_list_file %>
+<% end -%>
 #
 # You may activate the "-R" option to the builtin ls. This is disabled by
 # default to avoid remote users being able to cause excessive I/O on large
