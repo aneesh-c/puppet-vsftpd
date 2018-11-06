@@ -116,6 +116,9 @@ xferlog_std_format=<%= @xferlog_std_format %>
 <% if @chroot_local_user -%>
 chroot_local_user=<%= @chroot_local_user %>
 <% end -%>
+<% if @local_root -%>
+local_root=<%= @local_root %>
+<% end -%>
 #chroot_list_enable=YES
 # (default follows)
 #chroot_list_file=/etc/vsftpd/chroot_list
