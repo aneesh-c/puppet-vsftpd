@@ -41,8 +41,6 @@ class { 'vsftpd':
     pasv_min_port            => '1024',
     pasv_max_port            => '1048',
     pasv_address             => '127.0.0.1',
-
-
 }
 ```
 Advanced Configuration
@@ -61,7 +59,7 @@ Advanced Configuration
     ascii_download_enable    => 'NO',
     ascii_upload_enable      => 'NO',
     chown_uploads            => 'YES',
-    chown_username           => 'linux,
+    chown_username           => 'linux',
     chroot_list_file         => '/etc/vsftpd/my_chroot_list',
     secure_chroot_dir        => '/usr/share/empty',
     user_config_dir          => '/etc/vsftpd/user_config/',
