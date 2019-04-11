@@ -64,6 +64,8 @@ class vsftpd (
   Optional[String] $lemail = undef,
   Array[String[1]] $lename = [$facts['fqdn']],
   Optional[Boolean] $lecron = false,
+  Optional[String] $lecron_before = undef,
+  Optional[String] $lecron_success = undef
 ) inherits ::vsftpd::params {
   package { $package_name: ensure => installed }
   file { $configfile:
@@ -84,7 +86,8 @@ class vsftpd (
         manage_cron          => $lecron,
         cron_hour            => '0',
         cron_minute          => '30',
-        cron_success_command => '/usr/sbin/service vsftpd restart',
+        cron_before_command  => $lecron_before,
+        cron_success_command => $lecron_success,
         suppress_cron_output => true,
       }
     }
