@@ -63,7 +63,7 @@ class vsftpd (
   Boolean $letsencryptcert = false,
   Optional[String] $lemail = undef,
   Optional[String] $lename = undef,
-  Optional[String] $lecron = 'present',
+  Optional[Boolean] $lecron = false,
 ) inherits ::vsftpd::params {
   package { $package_name: ensure => installed }
   file { $configfile:
@@ -81,7 +81,7 @@ class vsftpd (
       }
       letsencrypt::certonly { $facts['fqdn']:        
         domains              => delete_undef_values([$facts['fqdn'], $lename]),
-        ensure_cron          => $lecron,
+        manage_cron          => $lecron,
         cron_hour            => '0',
         cron_minute          => '30',
         cron_success_command => '/usr/sbin/service vsftpd restart',
