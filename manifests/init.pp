@@ -79,7 +79,7 @@ class vsftpd (
           server => 'https://acme-staging.api.letsencrypt.org/directory',
         },
       }
-      letsencrypt::certonly { $facts['fqdn']:        
+      letsencrypt::certonly { pick($lename):
         domains              => $lename,
         manage_cron          => $lecron,
         cron_hour            => '0',
