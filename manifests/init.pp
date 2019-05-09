@@ -62,6 +62,7 @@ class vsftpd (
   $manage_service          = true,
   Boolean $letsencryptcert = false,
   Optional[String] $lemail = undef,
+  Optional[String] $leprod = false,
   Array[String[1]] $lename = [$facts['fqdn']],
   Optional[Boolean] $lecron = false,
   Optional[String] $lecron_before = undef,
@@ -75,10 +76,15 @@ class vsftpd (
   }
   if $letsencryptcert == true {
     if $lemail { 
+      if $leprod {
+        $leserver = 'https://acme-v02.api.letsencrypt.org/directory'
+      } else {
+        $leserver = 'https://acme-staging.api.letsencrypt.org/directory'
+      }
       class {'letsencrypt':
         email => $lemail,
         config => {
-          server => 'https://acme-staging.api.letsencrypt.org/directory',
+          server => $leserver,
         },
       }
       letsencrypt::certonly { pick($lename):
