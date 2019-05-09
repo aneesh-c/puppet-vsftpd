@@ -62,7 +62,7 @@ class vsftpd (
   $manage_service          = true,
   Boolean $letsencryptcert = false,
   Optional[String] $lemail = undef,
-  Optional[String] $leprod = false,
+  Boolean $leprod          = false,
   Array[String[1]] $lename = [$facts['fqdn']],
   Optional[Boolean] $lecron = false,
   Optional[String] $lecron_before = undef,
