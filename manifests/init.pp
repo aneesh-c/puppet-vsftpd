@@ -65,7 +65,7 @@ class vsftpd (
   Boolean $leprod          = false,
   Array[String[1]] $lename = [$facts['fqdn']],
   Optional[Boolean] $lecron = false,
-  Optional[String] $leconf = '/etc/letsencrypt'
+  Optional[String] $leconf = '/etc/letsencrypt',
   Optional[String] $lecron_before = undef,
   Optional[String] $lecron_success = undef
 ) inherits ::vsftpd::params {
