@@ -65,6 +65,7 @@ class vsftpd (
   Boolean $leprod          = false,
   Array[String[1]] $lename = [$facts['fqdn']],
   Optional[Boolean] $lecron = false,
+  Optional[String] $leconf = '/etc/letsencrypt'
   Optional[String] $lecron_before = undef,
   Optional[String] $lecron_success = undef
 ) inherits ::vsftpd::params {
@@ -90,6 +91,7 @@ class vsftpd (
       letsencrypt::certonly { pick($lename):
         domains              => $lename,
         manage_cron          => $lecron,
+        config_dir           => $leconf,
         cron_hour            => '0',
         cron_minute          => '30',
         cron_before_command  => $lecron_before,
