@@ -83,9 +83,10 @@ class vsftpd (
         $leserver = 'https://acme-staging.api.letsencrypt.org/directory'
       }
       class {'letsencrypt':
-        email      => $lemail,
-        config_dir => $leconf,
-        config     => {
+        email       => $lemail,
+        config_dir  => $leconf,
+        config_file => "${leconf}/cli.ini",
+        config      => {
           server => $leserver,
         },
       }
