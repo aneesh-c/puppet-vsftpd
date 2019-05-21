@@ -94,6 +94,7 @@ class vsftpd (
         domains              => $lename,
         manage_cron          => $lecron,
         config_dir           => $leconf,
+        additional_args      => ["--config-dir ${leconf}"],
         cron_hour            => '0',
         cron_minute          => '30',
         cron_before_command  => $lecron_before,
