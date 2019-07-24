@@ -65,6 +65,9 @@ connect_from_port_20=<%= @connect_from_port_20 %>
 # You may override where the log file goes if you like. The default is shown
 # below.
 #xferlog_file=/var/log/xferlog
+<% if @xferlog_file -%>
+xferlog_file=<%= @xferlog_file %>
+<% end -%>
 #
 # If you want, you can have your log file in standard ftpd xferlog format.
 # Note that the default log file location is /var/log/xferlog in this case.
@@ -73,10 +76,22 @@ xferlog_std_format=<%= @xferlog_std_format %>
 <% end -%>
 #
 # You may change the default value for timing out an idle session.
-#idle_session_timeout=600
+<% if @idle_session_timeout -%>
+idle_session_timeout=<%= @idle_session_timeout %>
+<% end -%>
+#
+#This controls whether vsftpd attempts to maintain sessions for logins.
+#If vsftpd is maintaining sessions, it will try and update utmp and wtmp.
+#It will also open a pam_session if using PAM to authenticate,
+# and only close this upon logout.
+<% if @session_support -%>
+session_support=<%= @session_support %>
+<% end -%>
 #
 # You may change the default value for timing out a data connection.
-#data_connection_timeout=120
+<% if @data_connection_timeout -%>
+data_connection_timeout=<%= @data_connection_timeout %>
+<% end -%>
 #
 # It is recommended that you define on your system a unique user which the
 # ftp server can use as a totally isolated and unprivileged user.
@@ -85,7 +100,9 @@ xferlog_std_format=<%= @xferlog_std_format %>
 # Enable this and the server will recognise asynchronous ABOR requests. Not
 # recommended for security (the code is non-trivial). Not enabling it,
 # however, may confuse older FTP clients.
-#async_abor_enable=YES
+<% if @async_abor_enable -%>
+async_abor_enable=<%= @async_abor_enable %>
+<% end -%>
 #
 # By default the server will pretend to allow ASCII mode but in fact ignore
 # the request. Turn on the below options to have the server actually do ASCII
@@ -115,6 +132,9 @@ xferlog_std_format=<%= @xferlog_std_format %>
 # chroot)
 <% if @chroot_local_user -%>
 chroot_local_user=<%= @chroot_local_user %>
+<% end -%>
+<% if @passwd_chroot_enable -%>
+passwd_chroot_enable=<%= @passwd_chroot_enable %>
 <% end -%>
 #chroot_list_enable=YES
 # (default follows)
@@ -221,4 +241,14 @@ require_ssl_reuse=<%= @require_ssl_reuse %>
 <% end -%>
 <% if @ssl_ciphers -%>
 ssl_ciphers=<%= @ssl_ciphers %>
+<% end -%>
+<% if @debug_ssl -%>
+debug_ssl=<%= @debug_ssl %>
+<% end -%>
+#
+#If activated, files and directories starting with . will be shown in directory
+#listings even if the "a" flag was not used by the client.
+#This override excludes the "." and ".." entries.
+<% if @force_dot_files -%>
+force_dot_files=<%= @force_dot_files %>
 <% end -%>
