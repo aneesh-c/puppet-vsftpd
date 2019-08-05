@@ -1,4 +1,7 @@
 # Changelog
+## 7.0.1
+* configuration changes now restarts the vsftpd daemon if it's a RedHat based system
+* changed project name, urls, etc. (upstream doesn't care about contributions)
 ## 7.0.0
 * moved comments for configuration parameter into the if block of the config template
 * Added support for the following configuration parameters
