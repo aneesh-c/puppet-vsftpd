@@ -3,6 +3,7 @@
 ## Overview
 
 This module install and configure vsftpd ftp server.
+Original module by [aneesh](https://github.com/aneesh-c/puppet-vsftpd). Forked by pseiler
 
 ## Usage
 
