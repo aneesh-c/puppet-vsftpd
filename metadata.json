@@ -8,12 +8,7 @@
   "project_page": "https://github.com/pseiler/puppet-vsftpd",
   "issues_url": "https://github.com/pseiler/puppet-vsftpd/issues",
   "dependencies": [
-  
-  ],
-  "data_provider": null,
-  "tags": [
-    "vsftpd",
-    "ftp"
+
   ],
   "operatingsystem_support": [
     {
@@ -46,5 +41,18 @@
         "9"
       ]
     }
-  ]
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 4.10.0 < 7.0.0"
+    }
+  ],
+  "tags": [
+    "vsftpd",
+    "ftp"
+  ],
+  "pdk-version": "1.17.0",
+  "template-url": "https://github.com/puppetlabs/pdk-templates#1.17.0",
+  "template-ref": "tags/1.17.0-0-gd3a4319"
 }
