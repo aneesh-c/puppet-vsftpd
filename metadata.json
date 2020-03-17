@@ -4,9 +4,9 @@
   "author": "pseiler",
   "summary": "Installs, configures, and manage vsftpd",
   "license": "Apache-2.0",
-  "source": "https://github.com/pseiler-c/puppet-vsftpd",
-  "project_page": "https://github.com/pseiler-c/puppet-vsftpd",
-  "issues_url": "https://github.com/pseiler-c/puppet-vsftpd/issues",
+  "source": "https://github.com/pseiler/puppet-vsftpd",
+  "project_page": "https://github.com/pseiler/puppet-vsftpd",
+  "issues_url": "https://github.com/pseiler/puppet-vsftpd/issues",
   "dependencies": [
   
   ],
