@@ -1,4 +1,8 @@
 # Changelog
+## 7.0.3
+* fixed breaking syntax mistake anon\_root in config template (thanks pingram3030)
+## 7.0.2
+* made module compatible with PDK
 ## 7.0.1
 * configuration changes now restarts the vsftpd daemon if it's a RedHat based system
 * changed project name, urls, etc. (upstream doesn't care about contributions)
